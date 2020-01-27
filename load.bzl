@@ -16,6 +16,16 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
 
 def repositories():
+
+    http_archive(
+        name = "bazel_toolchains",
+        sha256 = "a5635f7c47d08cae4c5690a0c5a6c5d4276c9f6fe7a510659c8435c525ef0d41",
+        strip_prefix = "bazel-toolchains-2.0.3",
+        urls = [
+    	"https://github.com/bazelbuild/bazel-toolchains/releases/download/2.0.3/bazel-toolchains-2.0.3.tar.gz",
+    	"https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/2.0.3.tar.gz",
+        ],
+    )
     http_archive(
         name = "io_k8s_repo_infra",
         sha256 = "5ee2a8e306af0aaf2844b5e2c79b5f3f53fc9ce3532233f0615b8d0265902b2a",
@@ -26,23 +36,23 @@ def repositories():
     )
     http_archive(
         name = "io_bazel_rules_docker",
-        sha256 = "413bb1ec0895a8d3249a01edf24b82fd06af3c8633c9fb833a0cb1d4b234d46d",
+        sha256 = "94b11b407db41482c5a55062a008494e1ac33f473d342091da3755779336278e",
         strip_prefix = "rules_docker-0.12.0",
-        urls = ["https://github.com/bazelbuild/rules_docker/archive/v0.12.0.tar.gz"],
+        urls = ["https://github.com/adamjm/rules_docker/releases/download/v0.12.0/rules_docker-v0.12.0-ppc64le.tar.gz"],
     )
 
     http_archive(
         name = "io_bazel_rules_k8s",
-        sha256 = "a34539941fd920432b7c545f720129e2f2e6b2285f1beb66de25e429f91759bf",
+        sha256 = "8953f8e1f79a73a961bef869e33cd2a0e04c320f9d63c7567290c7cce8537c26",
         strip_prefix = "rules_k8s-0.3",
-        urls = ["https://github.com/bazelbuild/rules_k8s/releases/download/v0.3/rules_k8s-v0.3.tar.gz"],
+        urls = ["https://github.com/adamjm/rules_k8s/releases/download/v0.3/rules_k8s-0.3-ppc64le.tar.gz"],
     )
 
     # https://github.com/bazelbuild/rules_nodejs
     http_archive(
         name = "build_bazel_rules_nodejs",
-        sha256 = "9abd649b74317c9c135f4810636aaa838d5bea4913bfa93a85c2f52a919fdaf3",
-        urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.36.0/rules_nodejs-0.36.0.tar.gz"],
+        sha256 = "8d15c36155a1e6f53e0722ea6227ea31ac8b6726959a7fa2230b115b53d15457",
+        urls = ["https://github.com/adamjm/rules_nodejs/releases/download/0.36.0/rules_nodejs-0.36.0-ppc64le.tar.gz"],
     )
 
     # Python setup

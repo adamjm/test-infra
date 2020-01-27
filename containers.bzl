@@ -17,25 +17,25 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 def repositories():
     container_pull(
         name = "distroless-base",
-        digest = "sha256:e37cf3289c1332c5123cbf419a1657c8dad0811f2f8572433b668e13747718f8",
-        registry = "gcr.io",
-        repository = "distroless/base",
+        digest = "sha256:7fa7445dfbebae4f4b7ab0e6ef99276e96075ae42584af6286ba080750d6dfe5",
+        registry = "docker.io",
+        repository = "adamjm32/distroless-base",
         tag = "latest",
     )
 
     container_pull(
         name = "alpine-base",
-        digest = "sha256:bd327018b3effc802514b63cc90102bfcd92765f4486fc5abc28abf7eb9f1e4d",  # 2018/09/20
-        registry = "gcr.io",
-        repository = "k8s-prow/alpine",
+        digest = "sha256:21e1b411f13fc5407401296a739a11e36b469854b5b982a4928738363e14f7a2",  # 2018/09/20
+        registry = "docker.io",
+        repository = "adamjm32/alpine",
         tag = "0.1",  # TODO(fejta): update or replace
     )
 
     container_pull(
         name = "alpine-bash",
-        digest = "sha256:d520f733f3d648b81201b28b0f9894ad2940972c516e554958d0177470c6a881",  # 2019/07/29
-        registry = "gcr.io",
-        repository = "k8s-testimages/alpine-bash",
+        digest = "sha256:526e6e7cff714276999119f4f069187674bcb4679977b91d36edef2b727687fd",  # 2019/07/29
+        registry = "docker.io",
+        repository = "adamjm32/alpine-bash",
         tag = "latest",  # TODO(fejta): update or replace
     )
 
@@ -49,17 +49,17 @@ def repositories():
 
     container_pull(
         name = "gcloud-base",
-        digest = "sha256:8e51eea50a45c6be2a735be97139f85a04c623ca448801a317a737c1d9917d00",  # 2019/08/16
-        registry = "gcr.io",
-        repository = "cloud-builders/gcloud",
+        digest = "sha256:b61cca1da7d7e8b90abf6217750cd0c53b1f7130abb68cc0e0f94014924d9498",  # 2019/08/16
+        registry = "docker.io",
+        repository = "adamjm32/glcoud",
         tag = "latest",
     )
 
     container_pull(
         name = "git-base",
-        digest = "sha256:01b0f83fe91b782ec7ddf1e742ab7cc9a2261894fd9ab0760ebfd39af2d6ab28",  # 2018/07/02
-        registry = "gcr.io",
-        repository = "k8s-prow/git",
+        digest = "sha256:9e140b130b76081402a4142c3b814ef87a8f5461a1f9b5e0a5afa1ae6c9fa841",  # 2018/07/02
+        registry = "docker.io",
+        repository = "adamjm32/git",
         tag = "0.2",  # TODO(fejta): update or replace
     )
 
@@ -73,16 +73,16 @@ def repositories():
 
     container_pull(
         name = "gcloud-go",
-        digest = "sha256:0dd11e500c64b7e722ad13bc9616598a14bb0f66d9e1de4330456c646eaf237d",  # 2019/01/25
-        registry = "gcr.io",
-        repository = "k8s-testimages/gcloud-in-go",
-        tag = "v20190125-cc5d6ecff3",  # TODO(fejta): update or replace
+        digest = "sha256:abedf2599191ba4c7ddaa411e8490bb8423e8d44554c2ee89048221c68fbafe0",  # 2019/01/25
+        registry = "docker.io",
+        repository = "adamjm32/gcloud-in-go",
+        tag = "latest",  # TODO(fejta): update or replace
     )
 
     container_pull(
         name = "bazel-base",
-        digest = "sha256:0bfc1ffe6dfd4779f578ef58c5d9a9c6fb9c6fb8103223391033bcb6a40dff2b",  # 2019/11/25
-        registry = "gcr.io",
-        repository = "cloud-marketplace-containers/google/bazel",
-        tag = "1.2.0",
+        digest = "sha256:6c4e836d4415a2cbde73f68432664392090dae0995be979ef4ef8fc8d0c097f4",  # 2019/11/25
+        registry = "docker.io",
+        repository = "adamjm32/bazel_base",
+        tag = "1.0.0",
     )

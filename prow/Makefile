@@ -74,7 +74,7 @@ bazel-release-push:
 	@echo See https://bazel.build/ for install options.
 	@echo Be sure to setup authentication: https://github.com/bazelbuild/rules_docker#authentication
 	@echo Also run gcloud auth application-default login
-	bazel run //prow:release-push --platforms=@io_bazel_rules_go//go/toolchain:linux_amd64
+	bazel run //prow:release-push --platforms=@io_bazel_rules_go//go/toolchain:linux_ppc64le --host_javabase=@local_jdk//:jdk 
 
 .PHONY: bazel-release-push
 

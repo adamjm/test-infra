@@ -30,6 +30,22 @@ _container_deps()
 
 load("@io_bazel_rules_docker//go:image.bzl", _go_repositories = "repositories")
 
+# Load the macro that allows you to customize the docker toolchain configuration.
+load("@io_bazel_rules_docker//toolchains/docker:toolchain.bzl",
+    docker_toolchain_configure="toolchain_configure"
+)
+
+docker_toolchain_configure(
+  name = "docker_config",
+  # Replace this with an absolute path to a directory which has a custom docker
+  # client config.json. Note relative paths are not supported.
+  # Docker allows you to specify custom authentication credentials
+  # in the client configuration JSON file.
+  # See https://docs.docker.com/engine/reference/commandline/cli/#configuration-files
+  # for more details.
+  client_config="/root/.docker/",
+)
+
 _go_repositories()
 
 load("@io_bazel_rules_k8s//k8s:k8s.bzl", _k8s_repos = "k8s_repositories")
